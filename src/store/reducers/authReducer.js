@@ -16,12 +16,11 @@ export const authReducer = (state = initialState, action) => {
   switch (type) {
     case 'auth/unsetUser':
       return {
-        ...state,
-        authenticated: false,
+        ...initialState,
       };
     case 'auth/setUser':
       return {
-        ...state,
+        user: payload,
         authenticated: true,
       };
     default:
